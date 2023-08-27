@@ -53,6 +53,7 @@ type Gopher struct {
 }
 
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
+	s.Identify.Intents |= discordgo.IntentMessageContent
 	if m.Author.ID == s.State.User.ID {
 		return
 	}
