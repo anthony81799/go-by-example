@@ -71,7 +71,10 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 				fmt.Println(err)
 			}
 		} else {
-			fmt.Println("Error: Can't get dr-who Gopher! :-(")
+			_, err = s.ChannelMessageSend(m.ChannelID, "Error: Can't get dr-who Gopher! :-(")
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 	}
 
@@ -88,7 +91,10 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 				fmt.Println(err)
 			}
 		} else {
-			fmt.Println("Error: Can't get random Gopher! :-(")
+			_, err = s.ChannelMessageSend(m.ChannelID, "Error: Can't get random Gopher! :-(")
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 	}
 
@@ -121,7 +127,10 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 				fmt.Println(err)
 			}
 		} else {
-			fmt.Println("Error: Can't get list of Gophers! :-(")
+			_, err = s.ChannelMessageSend(m.ChannelID, "Error: Can't get list of Gophers! :-(")
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 	}
 }
